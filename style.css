@@ -18,9 +18,11 @@ body {
 body {
   gap: 1em;
 }
+
 .grid {
   height: 60rem;
   width: 60rem;
+  border: 1px solid black;
 }
 
 button {
