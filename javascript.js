@@ -1,13 +1,14 @@
 function createGrid(size) {
   const grid = document.querySelector(".grid");
-  console.log(grid);
   for (let i = 0; i < size; i++) {
     const row = document.createElement("div");
     row.classList.add("row");
     for (let j = 0; j < size; j++) {
       const div = document.createElement("div");
       div.classList.add("cell");
-      div.style = `height: ${60 / size}rem; width: ${60 / size}rem`;
+      div.style = `height: ${60 / size}rem; width: ${
+        60 / size
+      }rem; background-color: black; opacity: 0;`;
       row.appendChild(div);
     }
     grid.appendChild(row);
@@ -16,8 +17,10 @@ function createGrid(size) {
   const cells = document.querySelectorAll(".cell");
   cells.forEach((cell) => {
     cell.addEventListener("mouseenter", function (e) {
-      console.log(e);
-      e.target.style.backgroundColor = "purple";
+      const opacity = parseFloat(e.target.style.opacity);
+      if (opacity < 1) {
+        e.target.style.opacity = `${opacity + 0.1}`;
+      }
     });
   });
 }
