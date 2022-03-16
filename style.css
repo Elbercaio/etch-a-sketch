@@ -1,0 +1,28 @@
+.grid,
+.row,
+body {
+  display: flex;
+}
+
+.row,
+body {
+  justify-content: center;
+  align-items: center;
+}
+
+.grid,
+body {
+  flex-direction: column;
+}
+
+body {
+  gap: 1em;
+}
+.grid {
+  height: 60rem;
+  width: 60rem;
+}
+
+button {
+  margin-bottom: 1rem;
+}
